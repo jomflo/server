@@ -12,18 +12,10 @@ app.use(bodyParser.json());
 
 
 const connection = mysql.createConnection({
-  //  host: "sql9.freemysqlhosting.net",
-  //  user: "sql9610311",
-  //  password: "GXVtBn3QJa",
-  //  database: "sql9610311",
     host:  process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
-  // host:  "localhost",
-  // user: "root",
-  // password: "Root123*",
-  // database: "users_expressjs_reactjs"
   
 });
 
@@ -107,7 +99,7 @@ app.delete("/api/users/:id", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log("Servidor iniciado en el puerto 5000");
+  console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
